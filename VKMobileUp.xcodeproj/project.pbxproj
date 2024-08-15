@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		04AD4FCD2C6D05F2002F909D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD4FCC2C6D05F2002F909D /* AppDelegate.swift */; };
 		04AD4FCF2C6D05F2002F909D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD4FCE2C6D05F2002F909D /* SceneDelegate.swift */; };
-		04AD4FD12C6D05F2002F909D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD4FD02C6D05F2002F909D /* ViewController.swift */; };
-		04AD4FD42C6D05F2002F909D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 04AD4FD32C6D05F2002F909D /* Base */; };
 		04AD4FD62C6D05F5002F909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04AD4FD52C6D05F5002F909D /* Assets.xcassets */; };
 		04AD4FD92C6D05F5002F909D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 04AD4FD82C6D05F5002F909D /* Base */; };
+		04AD50072C6D81F4002F909D /* AuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD50062C6D81F4002F909D /* AuthWebViewController.swift */; };
+		04AD500B2C6D828C002F909D /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD500A2C6D828C002F909D /* AppViewController.swift */; };
+		04AD500F2C6D84DB002F909D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD500E2C6D84DB002F909D /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04AD4FC92C6D05F2002F909D /* VKMobileUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKMobileUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04AD4FCC2C6D05F2002F909D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04AD4FCE2C6D05F2002F909D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04AD4FD02C6D05F2002F909D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04AD4FD32C6D05F2002F909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04AD4FD52C6D05F5002F909D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04AD4FD82C6D05F5002F909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04AD4FDA2C6D05F5002F909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04AD50062C6D81F4002F909D /* AuthWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWebViewController.swift; sourceTree = "<group>"; };
+		04AD500A2C6D828C002F909D /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		04AD500E2C6D84DB002F909D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		04AD4FCB2C6D05F2002F909D /* VKMobileUp */ = {
 			isa = PBXGroup;
 			children = (
-				04AD4FCC2C6D05F2002F909D /* AppDelegate.swift */,
-				04AD4FCE2C6D05F2002F909D /* SceneDelegate.swift */,
-				04AD4FD02C6D05F2002F909D /* ViewController.swift */,
-				04AD4FD22C6D05F2002F909D /* Main.storyboard */,
-				04AD4FD52C6D05F5002F909D /* Assets.xcassets */,
-				04AD4FD72C6D05F5002F909D /* LaunchScreen.storyboard */,
+				04AD50002C6D7FBE002F909D /* App */,
+				04AD50032C6D7FD4002F909D /* Controller */,
+				04AD50022C6D7FCE002F909D /* Views */,
+				04AD50012C6D7FCB002F909D /* Model */,
 				04AD4FDA2C6D05F5002F909D /* Info.plist */,
+				04AD4FD72C6D05F5002F909D /* LaunchScreen.storyboard */,
+				04AD4FD52C6D05F5002F909D /* Assets.xcassets */,
 			);
 			path = VKMobileUp;
+			sourceTree = "<group>";
+		};
+		04AD50002C6D7FBE002F909D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				04AD4FCC2C6D05F2002F909D /* AppDelegate.swift */,
+				04AD4FCE2C6D05F2002F909D /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		04AD50012C6D7FCB002F909D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04AD50022C6D7FCE002F909D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04AD50032C6D7FD4002F909D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04AD50062C6D81F4002F909D /* AuthWebViewController.swift */,
+				04AD500A2C6D828C002F909D /* AppViewController.swift */,
+				04AD500E2C6D84DB002F909D /* AuthViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +162,6 @@
 			files = (
 				04AD4FD62C6D05F5002F909D /* Assets.xcassets in Resources */,
 				04AD4FD92C6D05F5002F909D /* Base in Resources */,
-				04AD4FD42C6D05F2002F909D /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AD4FD12C6D05F2002F909D /* ViewController.swift in Sources */,
+				04AD500F2C6D84DB002F909D /* AuthViewController.swift in Sources */,
+				04AD50072C6D81F4002F909D /* AuthWebViewController.swift in Sources */,
 				04AD4FCD2C6D05F2002F909D /* AppDelegate.swift in Sources */,
+				04AD500B2C6D828C002F909D /* AppViewController.swift in Sources */,
 				04AD4FCF2C6D05F2002F909D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +183,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		04AD4FD22C6D05F2002F909D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04AD4FD32C6D05F2002F909D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		04AD4FD72C6D05F5002F909D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,9 +325,9 @@
 				INFOPLIST_FILE = VKMobileUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +335,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Mac.VKMobileUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,9 +357,9 @@
 				INFOPLIST_FILE = VKMobileUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +367,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Mac.VKMobileUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
