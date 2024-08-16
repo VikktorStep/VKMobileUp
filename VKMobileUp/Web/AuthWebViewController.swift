@@ -10,9 +10,22 @@ import WebKit
 
 class WebViewController: UIViewController {
     
+    var router: WebRouter
+    var presenter: WebPresenter
+    
+    init(router: WebRouter, presenter: WebPresenter) {
+        self.router = router
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     var tokenHandler: ((String) -> Void)?
     
-    private var webView: WKWebView! // TODO: sd
+    private var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +51,6 @@ class WebViewController: UIViewController {
             let request = URLRequest(url: url)
             webView.load(request)
         }
-        
     }
 }
 
@@ -62,12 +74,10 @@ extension WebViewController: WKNavigationDelegate {
             tokenHandler?(accessToken)
             print(accessToken)
             
-            let newVC = AppViewController()
-            show(newVC, sender: self)
+            router.dismiss()
         }
-        
+        //TODO: Refactor
         
         decisionHandler(.cancel)
-     
     }
 }

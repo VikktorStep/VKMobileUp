@@ -4,6 +4,19 @@ import WebKit
 
 class AuthViewController: UIViewController {
     
+    var router: Example1Router
+    var presenter: Presenter
+    
+    init(router: Example1Router, presenter: Presenter) {
+        self.router = router
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Вход через VK", for: .normal)
@@ -50,9 +63,6 @@ class AuthViewController: UIViewController {
     }
     
     @objc private func didTapLoginButton() {
-        let webViewController = WebViewController()
-        webViewController.modalPresentationStyle = .pageSheet
-        present(webViewController, animated: true, completion: nil)
+        presenter.didTapButton()
     }
-
 }
