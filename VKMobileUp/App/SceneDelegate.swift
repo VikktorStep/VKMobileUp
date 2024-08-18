@@ -1,32 +1,31 @@
-//
-//  SceneDelegate.swift
-//  VKMobileUp
-//
-//  Created by Mac on 14.08.2024.
-//
 
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+       var router: StartScreenRouter?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+       func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+           
+           guard let windowScene = (scene as? UIWindowScene) else { return }
+           
+           window = UIWindow(windowScene: windowScene)
+           
+           let navigationController = UINavigationController()
+           
+           router = StartScreenRouter(navigationController: navigationController)
+           
+           let authModel = WebAuthModel()
+                      
+           if authModel.isTokenValid() {
+               window?.rootViewController = router?.navigateToMainScreen()
+           } else {
+               window?.rootViewController = router?.start()
+           }
 
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        window = UIWindow(windowScene: windowScene)
-        
-        let router = Example1Router(navigationController: nil)
-        
-        let rootViewController = router.start()
-        
-        window?.windowScene = windowScene
-        
-        window?.rootViewController = rootViewController
-        
-        window?.makeKeyAndVisible()
-    }
+           window?.makeKeyAndVisible()
+     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         

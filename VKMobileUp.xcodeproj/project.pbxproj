@@ -11,16 +11,20 @@
 		04AD4FCF2C6D05F2002F909D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD4FCE2C6D05F2002F909D /* SceneDelegate.swift */; };
 		04AD4FD62C6D05F5002F909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04AD4FD52C6D05F5002F909D /* Assets.xcassets */; };
 		04AD4FD92C6D05F5002F909D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 04AD4FD82C6D05F5002F909D /* Base */; };
-		04AD50072C6D81F4002F909D /* AuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD50062C6D81F4002F909D /* AuthWebViewController.swift */; };
-		04AD500B2C6D828C002F909D /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD500A2C6D828C002F909D /* AppViewController.swift */; };
-		04AD500F2C6D84DB002F909D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD500E2C6D84DB002F909D /* AuthViewController.swift */; };
+		04AD50072C6D81F4002F909D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD50062C6D81F4002F909D /* WebViewController.swift */; };
+		04AD500B2C6D828C002F909D /* VideoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD500A2C6D828C002F909D /* VideoCollectionView.swift */; };
+		04AD500F2C6D84DB002F909D /* StartScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD500E2C6D84DB002F909D /* StartScreenController.swift */; };
 		04AD50152C6EB1FF002F909D /* PhotosCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD50142C6EB1FF002F909D /* PhotosCollectionView.swift */; };
-		04AD501A2C6EB2D9002F909D /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD50192C6EB2D9002F909D /* PhotosCollectionViewCell.swift */; };
-		04AD501C2C6EB406002F909D /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD501B2C6EB406002F909D /* PhotosVC.swift */; };
-		04AD501E2C6EB705002F909D /* PhotosDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD501D2C6EB705002F909D /* PhotosDetailVC.swift */; };
-		04AD50202C6EC19F002F909D /* SegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD501F2C6EC19F002F909D /* SegmentController.swift */; };
-		E692DBD32C6FBA4300FCB229 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD22C6FBA4300FCB229 /* Coordinator.swift */; };
+		E692DBD32C6FBA4300FCB229 /* StartScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD22C6FBA4300FCB229 /* StartScreenRouter.swift */; };
 		E692DBD62C6FC0FC00FCB229 /* WebRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD52C6FC0FC00FCB229 /* WebRouter.swift */; };
+		E692DBD82C6FE82900FCB229 /* WebBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD72C6FE82900FCB229 /* WebBuilder.swift */; };
+		E692DBDA2C6FE84400FCB229 /* WebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD92C6FE84400FCB229 /* WebPresenter.swift */; };
+		E692DBE22C6FEAED00FCB229 /* StartScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBE12C6FEAED00FCB229 /* StartScreenPresenter.swift */; };
+		E692DBE42C6FEAFC00FCB229 /* StartScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBE32C6FEAFC00FCB229 /* StartScreenBuilder.swift */; };
+		E692DC4C2C72347200FCB229 /* SegmentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC4B2C72347200FCB229 /* SegmentedController.swift */; };
+		E692DC4E2C72348100FCB229 /* SegmnetedControlVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC4D2C72348100FCB229 /* SegmnetedControlVIew.swift */; };
+		E692DC502C7234D100FCB229 /* WebAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC4F2C7234D100FCB229 /* WebAuthModel.swift */; };
+		E692DC532C72355600FCB229 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E692DC522C72355600FCB229 /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,16 +34,19 @@
 		04AD4FD52C6D05F5002F909D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04AD4FD82C6D05F5002F909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04AD4FDA2C6D05F5002F909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04AD50062C6D81F4002F909D /* AuthWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWebViewController.swift; sourceTree = "<group>"; };
-		04AD500A2C6D828C002F909D /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
-		04AD500E2C6D84DB002F909D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		04AD50062C6D81F4002F909D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		04AD500A2C6D828C002F909D /* VideoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionView.swift; sourceTree = "<group>"; };
+		04AD500E2C6D84DB002F909D /* StartScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenController.swift; sourceTree = "<group>"; };
 		04AD50142C6EB1FF002F909D /* PhotosCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionView.swift; sourceTree = "<group>"; };
-		04AD50192C6EB2D9002F909D /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
-		04AD501B2C6EB406002F909D /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
-		04AD501D2C6EB705002F909D /* PhotosDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailVC.swift; sourceTree = "<group>"; };
-		04AD501F2C6EC19F002F909D /* SegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentController.swift; sourceTree = "<group>"; };
-		E692DBD22C6FBA4300FCB229 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E692DBD22C6FBA4300FCB229 /* StartScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenRouter.swift; sourceTree = "<group>"; };
 		E692DBD52C6FC0FC00FCB229 /* WebRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRouter.swift; sourceTree = "<group>"; };
+		E692DBD72C6FE82900FCB229 /* WebBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBuilder.swift; sourceTree = "<group>"; };
+		E692DBD92C6FE84400FCB229 /* WebPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPresenter.swift; sourceTree = "<group>"; };
+		E692DBE12C6FEAED00FCB229 /* StartScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenPresenter.swift; sourceTree = "<group>"; };
+		E692DBE32C6FEAFC00FCB229 /* StartScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenBuilder.swift; sourceTree = "<group>"; };
+		E692DC4B2C72347200FCB229 /* SegmentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedController.swift; sourceTree = "<group>"; };
+		E692DC4D2C72348100FCB229 /* SegmnetedControlVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmnetedControlVIew.swift; sourceTree = "<group>"; };
+		E692DC4F2C7234D100FCB229 /* WebAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAuthModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E692DC532C72355600FCB229 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,16 +80,16 @@
 		04AD4FCB2C6D05F2002F909D /* VKMobileUp */ = {
 			isa = PBXGroup;
 			children = (
-				E692DBD42C6FC0DC00FCB229 /* Web */,
-				E692DBD12C6FB9ED00FCB229 /* Coordinator */,
-				04AD50182C6EB25C002F909D /* Photos */,
 				04AD50002C6D7FBE002F909D /* App */,
-				04AD50032C6D7FD4002F909D /* Controller */,
-				04AD50022C6D7FCE002F909D /* Views */,
-				04AD50012C6D7FCB002F909D /* Model */,
+				E692DC032C701BD900FCB229 /* StartScreen */,
+				E692DBD42C6FC0DC00FCB229 /* WebOAuth */,
+				04AD4FD52C6D05F5002F909D /* Assets.xcassets */,
 				04AD4FDA2C6D05F5002F909D /* Info.plist */,
 				04AD4FD72C6D05F5002F909D /* LaunchScreen.storyboard */,
-				04AD4FD52C6D05F5002F909D /* Assets.xcassets */,
+				04AD50182C6EB25C002F909D /* Photos */,
+				E692DC4B2C72347200FCB229 /* SegmentedController.swift */,
+				E692DC4D2C72348100FCB229 /* SegmnetedControlVIew.swift */,
+				04AD50032C6D7FD4002F909D /* Videos */,
 			);
 			path = VKMobileUp;
 			sourceTree = "<group>";
@@ -95,64 +103,43 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		04AD50012C6D7FCB002F909D /* Model */ = {
+		04AD50032C6D7FD4002F909D /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				04AD500A2C6D828C002F909D /* VideoCollectionView.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		04AD50022C6D7FCE002F909D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				04AD50162C6EB247002F909D /* Components */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		04AD50032C6D7FD4002F909D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				04AD500A2C6D828C002F909D /* AppViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		04AD50162C6EB247002F909D /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
+			path = Videos;
 			sourceTree = "<group>";
 		};
 		04AD50182C6EB25C002F909D /* Photos */ = {
 			isa = PBXGroup;
 			children = (
 				04AD50142C6EB1FF002F909D /* PhotosCollectionView.swift */,
-				04AD50192C6EB2D9002F909D /* PhotosCollectionViewCell.swift */,
-				04AD501B2C6EB406002F909D /* PhotosVC.swift */,
-				04AD501D2C6EB705002F909D /* PhotosDetailVC.swift */,
-				04AD501F2C6EC19F002F909D /* SegmentController.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
 		};
-		E692DBD12C6FB9ED00FCB229 /* Coordinator */ = {
+		E692DBD42C6FC0DC00FCB229 /* WebOAuth */ = {
 			isa = PBXGroup;
 			children = (
-				E692DBD22C6FBA4300FCB229 /* Coordinator.swift */,
-				04AD500E2C6D84DB002F909D /* AuthViewController.swift */,
+				E692DBD72C6FE82900FCB229 /* WebBuilder.swift */,
+				04AD50062C6D81F4002F909D /* WebViewController.swift */,
+				E692DBD92C6FE84400FCB229 /* WebPresenter.swift */,
+				E692DBD52C6FC0FC00FCB229 /* WebRouter.swift */,
+				E692DC4F2C7234D100FCB229 /* WebAuthModel.swift */,
 			);
-			path = Coordinator;
+			path = WebOAuth;
 			sourceTree = "<group>";
 		};
-		E692DBD42C6FC0DC00FCB229 /* Web */ = {
+		E692DC032C701BD900FCB229 /* StartScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E692DBD52C6FC0FC00FCB229 /* WebRouter.swift */,
-				04AD50062C6D81F4002F909D /* AuthWebViewController.swift */,
+				E692DBE32C6FEAFC00FCB229 /* StartScreenBuilder.swift */,
+				04AD500E2C6D84DB002F909D /* StartScreenController.swift */,
+				E692DBE12C6FEAED00FCB229 /* StartScreenPresenter.swift */,
+				E692DBD22C6FBA4300FCB229 /* StartScreenRouter.swift */,
 			);
-			path = Web;
+			path = StartScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +158,9 @@
 			dependencies = (
 			);
 			name = VKMobileUp;
+			packageProductDependencies = (
+				E692DC522C72355600FCB229 /* KeychainAccess */,
+			);
 			productName = VKMobileUp;
 			productReference = 04AD4FC92C6D05F2002F909D /* VKMobileUp.app */;
 			productType = "com.apple.product-type.application";
@@ -199,6 +189,9 @@
 				Base,
 			);
 			mainGroup = 04AD4FC02C6D05F2002F909D;
+			packageReferences = (
+				E692DC512C72355600FCB229 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 04AD4FCA2C6D05F2002F909D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,17 +218,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AD500F2C6D84DB002F909D /* AuthViewController.swift in Sources */,
+				04AD500F2C6D84DB002F909D /* StartScreenController.swift in Sources */,
+				E692DBDA2C6FE84400FCB229 /* WebPresenter.swift in Sources */,
 				E692DBD62C6FC0FC00FCB229 /* WebRouter.swift in Sources */,
-				E692DBD32C6FBA4300FCB229 /* Coordinator.swift in Sources */,
-				04AD501C2C6EB406002F909D /* PhotosVC.swift in Sources */,
-				04AD50072C6D81F4002F909D /* AuthWebViewController.swift in Sources */,
+				E692DBD82C6FE82900FCB229 /* WebBuilder.swift in Sources */,
+				E692DC4E2C72348100FCB229 /* SegmnetedControlVIew.swift in Sources */,
+				E692DBD32C6FBA4300FCB229 /* StartScreenRouter.swift in Sources */,
+				04AD50072C6D81F4002F909D /* WebViewController.swift in Sources */,
 				04AD4FCD2C6D05F2002F909D /* AppDelegate.swift in Sources */,
 				04AD50152C6EB1FF002F909D /* PhotosCollectionView.swift in Sources */,
-				04AD50202C6EC19F002F909D /* SegmentController.swift in Sources */,
-				04AD501A2C6EB2D9002F909D /* PhotosCollectionViewCell.swift in Sources */,
-				04AD500B2C6D828C002F909D /* AppViewController.swift in Sources */,
-				04AD501E2C6EB705002F909D /* PhotosDetailVC.swift in Sources */,
+				E692DC502C7234D100FCB229 /* WebAuthModel.swift in Sources */,
+				E692DBE22C6FEAED00FCB229 /* StartScreenPresenter.swift in Sources */,
+				04AD500B2C6D828C002F909D /* VideoCollectionView.swift in Sources */,
+				E692DC4C2C72347200FCB229 /* SegmentedController.swift in Sources */,
+				E692DBE42C6FEAFC00FCB229 /* StartScreenBuilder.swift in Sources */,
 				04AD4FCF2C6D05F2002F909D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -363,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -459,6 +455,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E692DC512C72355600FCB229 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E692DC522C72355600FCB229 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E692DC512C72355600FCB229 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04AD4FC12C6D05F2002F909D /* Project object */;
 }

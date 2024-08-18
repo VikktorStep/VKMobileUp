@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  VKMobileUp
-//
-//  Created by Mac on 14.08.2024.
-//
 
 import UIKit
 

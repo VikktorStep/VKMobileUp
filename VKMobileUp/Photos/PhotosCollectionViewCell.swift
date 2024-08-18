@@ -1,9 +1,3 @@
-//
-//  PhotosCollectionViewCell.swift
-//  VKMobileUp
-//
-//  Created by Mac on 16.08.2024.
-//
 
 import UIKit
 
@@ -43,7 +37,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 //    func configure(with image: UIImage) {
 //        imageView.image = image
 //    }
-    
 }
 
 
