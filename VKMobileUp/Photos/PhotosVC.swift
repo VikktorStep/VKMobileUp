@@ -1,20 +1,31 @@
-//
-//  PhotosVC.swift
-//  VKMobileUp
-//
-//  Created by Mac on 16.08.2024.
-//
 
 import UIKit
 
 class PhotosVC: UIViewController {
     let mainView = PhotosCollectionView()
-
+    
+    var router: PhotoRouterProtocol
+    var presenter: PhotosPresenter
+    
+    init(router: PhotoRouterProtocol, presenter: PhotosPresenter) {
+        self.router = router
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view = mainView
         mainView.collectionView.dataSource = self
         mainView.collectionView.delegate = self
+        
+        Task {
+            presenter.fetchPhotos
+        }
     }
 }
 
@@ -33,11 +44,6 @@ extension PhotosVC: UICollectionViewDataSource {
         cell.imageView.image = UIImage(systemName: "person")
         return cell
     }
-    
-}
-
-extension PhotosVC: UICollectionViewDelegateFlowLayout {
-    
 }
 
 extension PhotosVC: UICollectionViewDelegate {

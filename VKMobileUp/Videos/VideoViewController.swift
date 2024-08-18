@@ -1,13 +1,7 @@
-//
-//  AppViewController.swift
-//  VKMobileUp
-//
-//  Created by Mac on 15.08.2024.
-//
 
 import UIKit
 
-class AppViewController: UIViewController {
+class VideoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

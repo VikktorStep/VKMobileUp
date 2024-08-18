@@ -1,9 +1,3 @@
-//
-//  PhotosView.swift
-//  VKMobileUp
-//
-//  Created by Mac on 16.08.2024.
-//
 
 import UIKit
 

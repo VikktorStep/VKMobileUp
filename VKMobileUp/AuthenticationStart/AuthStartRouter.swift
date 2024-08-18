@@ -1,38 +1,24 @@
 
 import UIKit
 
-protocol Example1RouterProtocol {
-    func open()
-    func openWebView()
-}
-
-public class Example1Router: Example1RouterProtocol {
-
-    // MARK: - Public Outlets
-    
-    public var navigationController: UINavigationController? {
+class AuthStartRouter: AuthStartProtocol {
+    var navigationController: UINavigationController? {
         didSet {
             self.navigationController?.setNavigationBarHidden(true, animated: false)
         }
     }
-    
-    // MARK: - Private Properties
-    
+        
     private lazy var builder = Builder(router: self)
-
-    // MARK: - Public Init
     
-    public init( navigationController: UINavigationController?) {
+    init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
 
-    // MARK: - Public Methods
-    
-    public func openDetailsScreen() {
+    func openDetailsScreen() {
         print("Details screen opened")
     }
     
-    public func start() -> UINavigationController {
+    func start() -> UINavigationController {
         let viewController = builder.createViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         self.navigationController = navigationController
@@ -44,16 +30,16 @@ public class Example1Router: Example1RouterProtocol {
         router.start()
     }
 
-    public func open() {
+    func open() {
         let viewController = SegmentController()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
 struct Builder {
-    let router: Example1Router
+    let router: AuthStartRouter
     
-    init(router: Example1Router) {
+    init(router: AuthStartRouter) {
         self.router = router
     }
     
@@ -65,11 +51,12 @@ struct Builder {
     }
 }
 
+
 class Presenter {
     weak var viewController: AuthViewController?
-    let router: Example1RouterProtocol
+    let router: AuthStartProtocol
     
-    init(router: Example1RouterProtocol) {
+    init(router: AuthStartProtocol) {
         self.router = router
     }
     

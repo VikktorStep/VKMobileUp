@@ -1,9 +1,3 @@
-//
-//  PhotosDetailVC.swift
-//  VKMobileUp
-//
-//  Created by Mac on 16.08.2024.
-//
 
 import UIKit
 
@@ -34,17 +28,14 @@ class PhotosDetailVC: UIViewController {
     }
     
     private func setupViews() {
-        // Настройка изображения
         imageView.image = image
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        // Настройка заголовка
         dateLabel.text = "Uploaded on: \(date)"
         dateLabel.textAlignment = .center
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        // Настройка кнопки шаринга
         shareButton.setTitle("Share", for: .normal)
         shareButton.addTarget(self, action: #selector(shareImage), for: .touchUpInside)
         shareButton.translatesAutoresizingMaskIntoConstraints = false

@@ -1,9 +1,3 @@
-//
-//  AuthWebViewController.swift
-//  VKMobileUp
-//
-//  Created by Mac on 15.08.2024.
-//
 
 import UIKit
 import WebKit
@@ -81,3 +75,4 @@ extension WebViewController: WKNavigationDelegate {
         decisionHandler(.cancel)
     }
 }
+

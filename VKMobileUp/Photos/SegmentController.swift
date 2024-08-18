@@ -12,7 +12,7 @@ class SegmentController: UIViewController {
         view.addTarget(self, action: #selector(colorChandeg), for: .valueChanged)
         return view
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,11 +31,11 @@ class SegmentController: UIViewController {
 
     @objc func colorChandeg() {
         switch segmentContol.selectedSegmentIndex {
-        case 0:
-            let newVC = PhotosVC()
-            present(newVC, animated: true, completion: nil)
+//        case 0:
+//            let newVC = PhotosVC()
+//            present(newVC, animated: true, completion: nil)
         case 1:
-            let newVCc = AppViewController()
+            let newVCc = VideoViewController()
             present(newVCc, animated: true, completion: nil)
         default:
             print("Something went wrong")

@@ -3,11 +3,10 @@ import UIKit
 import WebKit
 
 class AuthViewController: UIViewController {
-    
-    var router: Example1Router
+    var router: AuthStartRouter
     var presenter: Presenter
     
-    init(router: Example1Router, presenter: Presenter) {
+    init(router: AuthStartRouter, presenter: Presenter) {
         self.router = router
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)

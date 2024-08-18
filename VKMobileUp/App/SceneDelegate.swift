@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  VKMobileUp
-//
-//  Created by Mac on 14.08.2024.
-//
 
 import UIKit
 
@@ -17,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene)
         
-        let router = Example1Router(navigationController: nil)
+        let router = AuthStartRouter(navigationController: nil)
         
         let rootViewController = router.start()
         
