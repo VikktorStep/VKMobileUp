@@ -6,6 +6,8 @@ class SegmentedController: UIViewController {
     private let segmentedControl = SegmentedControlView()
     private let photoCollectionView = PhotoCollectionView()
     private let videoCollectionView = VideoCollectionView()
+
+    private var photos: [Photo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +17,26 @@ class SegmentedController: UIViewController {
         setupConstraints()
         setupDelegates()
         
+        loadPhotos()
+        
         segmentChanged()
+    }
+    
+    private func loadPhotos() {
+        Task {
+            let authModel = WebAuthModel()
+            let photosService = PhotosService(authModel: authModel)
+            
+            do {
+                self.photos = try await photosService.fetchPhotos()
+                print("Fetched \(photos.count) photos:")
+                DispatchQueue.main.async {
+                    self.photoCollectionView.reloadData()
+                }
+            } catch {
+                print("Error fetching photos: \(error)")
+            }
+        }
     }
     
     private func setupNavigationBar() {
@@ -52,10 +73,11 @@ class SegmentedController: UIViewController {
     
     private func setupDelegates() {
         photoCollectionView.dataSource = self
-        photoCollectionView.delegate = self
+        photoCollectionView.delegate = photoCollectionView
         videoCollectionView.dataSource = self
         videoCollectionView.delegate = self
     }
+
     
     @objc private func segmentChanged() {
         photoCollectionView.isHidden = segmentedControl.selectedSegmentIndex != 0
@@ -70,14 +92,24 @@ class SegmentedController: UIViewController {
 extension SegmentedController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if collectionView == photoCollectionView {
+            return photoCollectionView.photos.count  // Возвращаем количество фотографий
+        } else {
+            return 10 // Это для videoCollectionView, если там будет другой источник данных
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = collectionView == photoCollectionView ? "PhotoCell" : "VideoCell"
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-        cell.backgroundColor = collectionView == photoCollectionView ? .blue : .red
-        return cell
+        if collectionView == photoCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCollectionViewCell
+            let photo = photoCollectionView.photos[indexPath.item]  // Данные берутся из photoCollectionView
+            cell.configure(with: photo)
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoCell", for: indexPath)
+            cell.backgroundColor = .red
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -90,3 +122,4 @@ extension SegmentedController: UICollectionViewDataSource, UICollectionViewDeleg
         }
     }
 }
+
