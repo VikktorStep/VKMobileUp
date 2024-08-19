@@ -1,4 +1,3 @@
-
 import UIKit
 import WebKit
 
@@ -29,15 +28,15 @@ final class WebPresenter {
         
         if let url = urlComponents.url {
             let request = URLRequest(url: url)
-            print("Загружаем URL: \(url.absoluteString)")
             view?.loadWebPage(with: request)
         } else {
-            print("Ошибка формирования URL")
+            NSLog("Ошибка формирования URL")
         }
     }
     
     func handleNavigationResponse(url: URL, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        guard url.path == "/blank.html", let fragment = url.fragment else {
+        guard url.path == "/blank.html",
+              let fragment = url.fragment else {
             decisionHandler(.allow)
             return
         }

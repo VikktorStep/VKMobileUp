@@ -1,4 +1,3 @@
-
 import Foundation
 import KeychainAccess
 
@@ -11,41 +10,41 @@ final class WebAuthModel {
         keychain[tokenKey] = token
         let timestamp = Date().timeIntervalSince1970
         keychain[tokenTimestampKey] = String(timestamp)
-        print("Сохранен токен: \(token) в Keychain с временной меткой: \(timestamp)")
+        NSLog("Сохранен токен: \(token) в Keychain с временной меткой: \(timestamp)")
     }
     
     func getToken() -> String? {
         let token = keychain[tokenKey]
-        print("Извлечен токен из Keychain: \(String(describing: token))")
+        NSLog("Извлечен токен из Keychain: \(String(describing: token))")
         return token
     }
     
     private func getTokenTimestamp() -> TimeInterval? {
         if let timestampString = keychain[tokenTimestampKey],
            let timestamp = TimeInterval(timestampString) {
-            print("Извлечена временная метка токена: \(timestamp)")
+            NSLog("Извлечена временная метка токена: \(timestamp)")
             return timestamp
         }
-        print("Временная метка токена не найдена")
+        NSLog("Временная метка токена не найдена")
         return nil
     }
     
     func isTokenValid() -> Bool {
         guard let _ = getToken(), let timestamp = getTokenTimestamp() else {
-            print("Токен не валиден или отсутствует")
+            NSLog("Токен не валиден или отсутствует")
             return false
         }
         
         let currentTime = Date().timeIntervalSince1970
         let timeElapsed = currentTime - timestamp
         let isValid = timeElapsed < 3600
-        print("Текущая временная метка: \(currentTime), время, прошедшее с момента получения токена: \(timeElapsed) секунд. Токен валиден: \(isValid)")
+        NSLog("Текущая временная метка: \(currentTime), время, прошедшее с момента получения токена: \(timeElapsed) секунд. Токен валиден: \(isValid)")
         return isValid
     }
     
     func clearToken() {
         keychain[tokenKey] = nil
         keychain[tokenTimestampKey] = nil
-        print("Токен и временная метка удалены из Keychain")
+        NSLog("Токен и временная метка удалены из Keychain")
     }
 }

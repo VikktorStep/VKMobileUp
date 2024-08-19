@@ -1,4 +1,3 @@
-
 import Foundation
 
 protocol HTTPDataDownloader {
@@ -8,24 +7,27 @@ protocol HTTPDataDownloader {
 extension HTTPDataDownloader {
     func fetchData<T: Decodable>(as type: T.Type, endpoint: String) async throws -> T {
         guard let url = URL(string: endpoint) else {
+            NotificationCenter.default.post(name: .showAlert, object: AlertContext.genericError)
             throw APIErrors.requestFailed(description: "Invalid URL")
         }
         
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIErrors.requestFailed(description: "Request failed")
-        }
-        
-        guard httpResponse.statusCode == 200 else {
-            throw APIErrors.invalidStatusCode(statusCode: httpResponse.statusCode)
-        }
-        
         do {
-            return try JSONDecoder().decode(type, from: data)
+            let (data, response) = try await URLSession.shared.data(from: url)
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                NotificationCenter.default.post(name: .showAlert, object: AlertContext.genericError)
+                throw APIErrors.invalidStatusCode(statusCode: (response as? HTTPURLResponse)?.statusCode ?? -1)
+            }
+            
+            do {
+                return try JSONDecoder().decode(type, from: data)
+            } catch {
+                NotificationCenter.default.post(name: .showAlert, object: AlertContext.genericError)
+                throw APIErrors.jsonParsingFailure
+            }
         } catch {
-            print("\(error.localizedDescription)")
-            throw error as? APIErrors ?? .unknownError(error: error)
+            NotificationCenter.default.post(name: .showAlert, object: AlertContext.genericError)
+            throw error
         }
     }
 }

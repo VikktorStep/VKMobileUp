@@ -1,4 +1,3 @@
-
 import UIKit
 import WebKit
 
@@ -19,7 +18,8 @@ final class StartScreenViewController: UIViewController, StartScreenViewProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+
+        view.backgroundColor = .systemBackground
         setupViews()
         setupConstraints()
     }
@@ -30,10 +30,10 @@ final class StartScreenViewController: UIViewController, StartScreenViewProtocol
     }
     
     private func setupLoginButton() {
-        loginButton.setTitle("Вход через VK", for: .normal)
+        loginButton.setTitle(TextStrings.vkLogin.rawValue, for: .normal)
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        loginButton.setTitleColor(.white, for: .normal)
-        loginButton.backgroundColor = .black
+        loginButton.setTitleColor(.systemBackground, for: .normal)
+        loginButton.backgroundColor = .label
         loginButton.layer.cornerRadius = 12
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
@@ -41,10 +41,12 @@ final class StartScreenViewController: UIViewController, StartScreenViewProtocol
     }
     
     private func setupTitleLabel() {
-        titleLabel.text = "Mobile Up\nGallery"
+        titleLabel.text = TextStrings.mobileUpStartScreen.rawValue
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 44, weight: .bold)
+        titleLabel.textColor = .label
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
         view.addSubview(titleLabel)
     }
     
@@ -54,7 +56,7 @@ final class StartScreenViewController: UIViewController, StartScreenViewProtocol
             loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24),
             loginButton.widthAnchor.constraint(equalToConstant: 343),
             loginButton.heightAnchor.constraint(equalToConstant: 52),
-            
+
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 160),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
@@ -64,5 +66,4 @@ final class StartScreenViewController: UIViewController, StartScreenViewProtocol
     @objc private func didTapLoginButton() {
         presenter.didTapButton()
     }
-
 }

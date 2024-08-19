@@ -1,4 +1,3 @@
-
 import UIKit
 import Kingfisher
 
@@ -22,7 +21,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
-        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         titleLabel.textColor = UIColor { traitCollection in
             traitCollection.userInterfaceStyle == .dark ? .white : .black
         }

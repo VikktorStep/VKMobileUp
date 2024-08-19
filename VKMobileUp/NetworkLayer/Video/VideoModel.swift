@@ -1,4 +1,3 @@
-
 import Foundation
 
 struct VideoResponse: Decodable {

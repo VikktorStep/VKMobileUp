@@ -1,8 +1,6 @@
-
 import UIKit
 
 final class StartScreenPresenter {
-    
     weak var view: StartScreenViewProtocol?
     let router: StartScreenProtocol
 
@@ -12,7 +10,6 @@ final class StartScreenPresenter {
     }
         
     func didTapButton() {
-        print("Presenter: Button tapped!")
         router.openWebView()
     }
 }

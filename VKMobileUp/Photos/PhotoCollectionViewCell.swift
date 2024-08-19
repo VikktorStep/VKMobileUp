@@ -1,9 +1,7 @@
-
 import UIKit
 import Kingfisher
 
 class PhotoCollectionViewCell: UICollectionViewCell {
-    
     private let imageView = UIImageView()
     
     override init(frame: CGRect) {

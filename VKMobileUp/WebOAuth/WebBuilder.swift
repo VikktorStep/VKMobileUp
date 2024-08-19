@@ -1,4 +1,3 @@
-
 import UIKit
 
 struct WebBuilder {
@@ -13,6 +12,7 @@ struct WebBuilder {
         let authModel = WebAuthModel()
         let webPresenter = WebPresenter(view: viewController, router: router, authModel: authModel)
         viewController.presenter = webPresenter
+        
         return viewController
     }
 }

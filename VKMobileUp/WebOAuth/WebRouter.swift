@@ -1,15 +1,6 @@
 import UIKit
 import WebKit
 
-protocol WebViewProtocol: AnyObject {
-    func loadWebPage(with request: URLRequest)
-}
-
-protocol WebRouterProtocol {
-    func open()
-    func dismiss()
-    func start()
-}
 
 final class WebRouter: WebRouterProtocol {
     var navigationController: UINavigationController?
@@ -33,7 +24,19 @@ final class WebRouter: WebRouterProtocol {
     }
     
     func open() {
-        let viewController = SegmentedViewController()
+        let viewController = SegmentedViewController(router: StartScreenRouter(navigationController: navigationController))
         navigationController?.pushViewController(viewController, animated: true)
     }
+
+}
+
+
+protocol WebViewProtocol: AnyObject {
+    func loadWebPage(with request: URLRequest)
+}
+
+protocol WebRouterProtocol {
+    func open()
+    func dismiss()
+    func start()
 }

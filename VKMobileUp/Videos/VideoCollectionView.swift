@@ -1,7 +1,6 @@
-
 import UIKit
 
-class VideoCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class VideoCollectionView: UICollectionView {
     
     var videos: [Video] = []
     
@@ -11,6 +10,7 @@ class VideoCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout,
         layout.minimumLineSpacing = 2
         layout.minimumInteritemSpacing = 2
         super.init(frame: .zero, collectionViewLayout: layout)
+        
         setupCollectionView()
     }
     
@@ -19,29 +19,13 @@ class VideoCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout,
     }
     
     private func setupCollectionView() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground 
         translatesAutoresizingMaskIntoConstraints = false
         register(VideoCollectionViewCell.self, forCellWithReuseIdentifier: "VideoCell")
-        dataSource = self
-        delegate = self
     }
-    
-    // MARK: - UICollectionViewDataSource
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoCell", for: indexPath) as! VideoCollectionViewCell
-        let video = videos[indexPath.item]
-        cell.configure(with: video)
-        return cell
-    }
-    
-    
-    // MARK: - UICollectionViewDelegateFlowLayout
-    
+}
+
+extension VideoCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         let height = width * 9 / 16

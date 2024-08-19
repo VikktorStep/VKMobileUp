@@ -1,4 +1,3 @@
-
 import UIKit
 
 class SegmentedViewController: UIViewController {
@@ -6,9 +5,20 @@ class SegmentedViewController: UIViewController {
     private let segmentedControl = SegmentedControlView()
     private let photoCollectionView = PhotoCollectionView()
     private let videoCollectionView = VideoCollectionView()
-
+    
     private var photos: [Photo] = []
     private var videos: [Video] = []
+    
+    private let router: StartScreenRouter
+    
+    init(router: StartScreenRouter) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +32,28 @@ class SegmentedViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "MobileUp Gallery"
-        let logoutButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(logout))
+        navigationItem.title = TextStrings.mobileUpGalery.rawValue
+        let logoutButton = UIBarButtonItem(title: TextStrings.exit.rawValue, style: .plain, target: self, action: #selector(logout))
         navigationItem.rightBarButtonItem = logoutButton
+        
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.label
+        ]
+        
+        navigationController?.navigationBar.barTintColor = UIColor.systemBackground
+        navigationController?.navigationBar.tintColor = UIColor.label
+        
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
+    
     private func setupSubviews() {
-        view.backgroundColor = .white
-        segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+        view.backgroundColor = .systemBackground
         view.addSubview(segmentedControl)
         view.addSubview(photoCollectionView)
         view.addSubview(videoCollectionView)
+        
+        segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
     }
     
     private func setupConstraints() {
@@ -82,13 +103,13 @@ class SegmentedViewController: UIViewController {
             
             do {
                 let photos = try await photosService.fetchPhotos()
-                print("Fetched \(photos.count) photos:")
+                NSLog("Fetched \(photos.count) photos:")
                 self.photos = photos
                 DispatchQueue.main.async {
                     self.photoCollectionView.reloadData()
                 }
             } catch {
-                print("Error fetching photos: \(error)")
+                NSLog("Error fetching photos: \(error)")
             }
         }
     }
@@ -104,18 +125,32 @@ class SegmentedViewController: UIViewController {
                     self.videoCollectionView.reloadData()
                 }
             } catch {
-                print("Error fetching videos: \(error)")
+                NSLog("Error fetching videos: \(error)")
             }
         }
     }
     
     @objc private func logout() {
-        print("Logout tapped")
+        let alertController = UIAlertController(
+            title: "Выход",
+            message: "Вы уверены, что хотите выйти?",
+            preferredStyle: .alert
+        )
+
+        let logoutAction = UIAlertAction(title: "Выйти", style: .destructive) { _ in
+            self.router.start()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
 
 extension SegmentedViewController: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == photoCollectionView {
             return photos.count
@@ -140,7 +175,6 @@ extension SegmentedViewController: UICollectionViewDataSource {
 }
 
 extension SegmentedViewController: UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == videoCollectionView {
             let selectedVideo = videos[indexPath.item]
@@ -149,7 +183,7 @@ extension SegmentedViewController: UICollectionViewDelegate {
             navigationController?.pushViewController(videoDetailVC, animated: true)
         } else {
             let selectedPhoto = photos[indexPath.item]
-            print("Selected photo: \(selectedPhoto.id)")
+            NSLog("Selected photo: \(selectedPhoto.id)")
             let detailVC = PhotoDetailViewController()
             detailVC.photo = selectedPhoto
             navigationController?.pushViewController(detailVC, animated: true)
@@ -158,7 +192,6 @@ extension SegmentedViewController: UICollectionViewDelegate {
 }
 
 extension SegmentedViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == photoCollectionView {
             let spacing: CGFloat = 6

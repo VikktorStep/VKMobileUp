@@ -1,4 +1,3 @@
-
 import UIKit
 
 class SegmentedControlView: UISegmentedControl {
@@ -7,6 +6,11 @@ class SegmentedControlView: UISegmentedControl {
         super.init(items: ["Фото", "Видео"])
         selectedSegmentIndex = 0
         translatesAutoresizingMaskIntoConstraints = false
+        
+        let textAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.label
+        ]
+        self.setTitleTextAttributes(textAttributes, for: .normal)
     }
     
     required init?(coder: NSCoder) {

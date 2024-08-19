@@ -36,6 +36,8 @@
 		E692DC762C72E47600FCB229 /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC752C72E47600FCB229 /* HTTPDataDownloader.swift */; };
 		E692DC7A2C738CF900FCB229 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC792C738CF900FCB229 /* VideoCollectionViewCell.swift */; };
 		E692DC7C2C738D3200FCB229 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC7B2C738D3200FCB229 /* VideoDetailViewController.swift */; };
+		E692DC7E2C73ADB000FCB229 /* TextStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC7D2C73ADB000FCB229 /* TextStrings.swift */; };
+		E692DC802C73C0D500FCB229 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC7F2C73C0D500FCB229 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		E692DC752C72E47600FCB229 /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
 		E692DC792C738CF900FCB229 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E692DC7B2C738D3200FCB229 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		E692DC7D2C73ADB000FCB229 /* TextStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStrings.swift; sourceTree = "<group>"; };
+		E692DC7F2C73C0D500FCB229 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +109,13 @@
 				04AD50002C6D7FBE002F909D /* App */,
 				E692DC032C701BD900FCB229 /* StartScreen */,
 				E692DBD42C6FC0DC00FCB229 /* WebOAuth */,
-				E692DC6A2C72C2B900FCB229 /* NetworkLayer */,
 				04AD50182C6EB25C002F909D /* Photos */,
 				04AD50032C6D7FD4002F909D /* Videos */,
+				E692DC6A2C72C2B900FCB229 /* NetworkLayer */,
 				E692DC4B2C72347200FCB229 /* SegmentedViewController.swift */,
 				E692DC4D2C72348100FCB229 /* SegmnetedControl.swift */,
+				E692DC7D2C73ADB000FCB229 /* TextStrings.swift */,
+				E692DC7F2C73C0D500FCB229 /* Alert.swift */,
 				04AD4FD52C6D05F5002F909D /* Assets.xcassets */,
 				04AD4FDA2C6D05F5002F909D /* Info.plist */,
 				04AD4FD72C6D05F5002F909D /* LaunchScreen.storyboard */,
@@ -285,12 +291,14 @@
 				E692DBD32C6FBA4300FCB229 /* StartScreenRouter.swift in Sources */,
 				E692DC562C72396C00FCB229 /* PhotoModel.swift in Sources */,
 				E692DC722C72E40E00FCB229 /* VideoModel.swift in Sources */,
+				E692DC802C73C0D500FCB229 /* Alert.swift in Sources */,
 				04AD50072C6D81F4002F909D /* WebViewController.swift in Sources */,
 				04AD4FCD2C6D05F2002F909D /* AppDelegate.swift in Sources */,
 				04AD50152C6EB1FF002F909D /* PhotosCollectionView.swift in Sources */,
 				E692DC742C72E44700FCB229 /* VideoService.swift in Sources */,
 				E692DC762C72E47600FCB229 /* HTTPDataDownloader.swift in Sources */,
 				E692DC502C7234D100FCB229 /* WebAuthModel.swift in Sources */,
+				E692DC7E2C73ADB000FCB229 /* TextStrings.swift in Sources */,
 				E692DC7C2C738D3200FCB229 /* VideoDetailViewController.swift in Sources */,
 				E692DBE22C6FEAED00FCB229 /* StartScreenPresenter.swift in Sources */,
 				04AD500B2C6D828C002F909D /* VideoCollectionView.swift in Sources */,
@@ -451,7 +459,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -483,7 +491,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
