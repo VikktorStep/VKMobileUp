@@ -1,7 +1,7 @@
 
 import Foundation
 
-enum PhotosAPIErrors: Error {
+enum APIErrors: Error {
     case invalidData
     case jsonParsingFailure
     case requestFailed(description: String)
