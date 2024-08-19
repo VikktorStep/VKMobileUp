@@ -1,13 +1,14 @@
 
 import UIKit
 
-class SegmentedController: UIViewController {
+class SegmentedViewController: UIViewController {
     
     private let segmentedControl = SegmentedControlView()
     private let photoCollectionView = PhotoCollectionView()
     private let videoCollectionView = VideoCollectionView()
 
     private var photos: [Photo] = []
+    private var videos: [Video] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,26 +18,7 @@ class SegmentedController: UIViewController {
         setupConstraints()
         setupDelegates()
         
-        loadPhotos()
-        
         segmentChanged()
-    }
-    
-    private func loadPhotos() {
-        Task {
-            let authModel = WebAuthModel()
-            let photosService = PhotosService(authModel: authModel)
-            
-            do {
-                self.photos = try await photosService.fetchPhotos()
-                print("Fetched \(photos.count) photos:")
-                DispatchQueue.main.async {
-                    self.photoCollectionView.reloadData()
-                }
-            } catch {
-                print("Error fetching photos: \(error)")
-            }
-        }
     }
     
     private func setupNavigationBar() {
@@ -73,15 +55,58 @@ class SegmentedController: UIViewController {
     
     private func setupDelegates() {
         photoCollectionView.dataSource = self
-        photoCollectionView.delegate = photoCollectionView
+        photoCollectionView.delegate = self
         videoCollectionView.dataSource = self
         videoCollectionView.delegate = self
     }
-
     
     @objc private func segmentChanged() {
-        photoCollectionView.isHidden = segmentedControl.selectedSegmentIndex != 0
-        videoCollectionView.isHidden = segmentedControl.selectedSegmentIndex != 1
+        let isPhotoSegmentSelected = segmentedControl.selectedSegmentIndex == 0
+        
+        photoCollectionView.isHidden = !isPhotoSegmentSelected
+        videoCollectionView.isHidden = isPhotoSegmentSelected
+        
+        if !isPhotoSegmentSelected && videos.isEmpty {
+            loadVideos()
+        }
+        
+        if isPhotoSegmentSelected && photos.isEmpty {
+            loadPhotos()
+        }
+    }
+    
+    private func loadPhotos() {
+        Task {
+            let authModel = WebAuthModel()
+            let photosService = PhotosService(authModel: authModel)
+            
+            do {
+                let photos = try await photosService.fetchPhotos()
+                print("Fetched \(photos.count) photos:")
+                self.photos = photos
+                DispatchQueue.main.async {
+                    self.photoCollectionView.reloadData()
+                }
+            } catch {
+                print("Error fetching photos: \(error)")
+            }
+        }
+    }
+    
+    private func loadVideos() {
+        Task {
+            let authModel = WebAuthModel()
+            let videoService = VideoService(authModel: authModel)
+            
+            do {
+                videos = try await videoService.fetchVideos()
+                DispatchQueue.main.async {
+                    self.videoCollectionView.reloadData()
+                }
+            } catch {
+                print("Error fetching videos: \(error)")
+            }
+        }
     }
     
     @objc private func logout() {
@@ -89,28 +114,50 @@ class SegmentedController: UIViewController {
     }
 }
 
-extension SegmentedController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SegmentedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == photoCollectionView {
-            return photoCollectionView.photos.count  // Возвращаем количество фотографий
+            return photos.count
         } else {
-            return 10 // Это для videoCollectionView, если там будет другой источник данных
+            return videos.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == photoCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCollectionViewCell
-            let photo = photoCollectionView.photos[indexPath.item]  // Данные берутся из photoCollectionView
+            let photo = photos[indexPath.item]
             cell.configure(with: photo)
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoCell", for: indexPath)
-            cell.backgroundColor = .red
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoCell", for: indexPath) as! VideoCollectionViewCell
+            let video = videos[indexPath.item]
+            cell.configure(with: video)
             return cell
         }
     }
+}
+
+extension SegmentedViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == videoCollectionView {
+            let selectedVideo = videos[indexPath.item]
+            let videoDetailVC = VideoDetailViewController()
+            videoDetailVC.video = selectedVideo
+            navigationController?.pushViewController(videoDetailVC, animated: true)
+        } else {
+            let selectedPhoto = photos[indexPath.item]
+            print("Selected photo: \(selectedPhoto.id)")
+            let detailVC = PhotoDetailViewController()
+            detailVC.photo = selectedPhoto
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
+}
+
+extension SegmentedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == photoCollectionView {
@@ -118,8 +165,9 @@ extension SegmentedController: UICollectionViewDataSource, UICollectionViewDeleg
             let width = (collectionView.frame.width - spacing * 2) / 2
             return CGSize(width: width, height: width)
         } else {
-            return CGSize(width: collectionView.frame.width, height: 200)
+            let width = collectionView.frame.width
+            let height = width * 9 / 16
+            return CGSize(width: width, height: height)
         }
     }
 }
-

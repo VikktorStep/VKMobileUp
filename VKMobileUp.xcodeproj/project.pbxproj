@@ -21,10 +21,21 @@
 		E692DBDA2C6FE84400FCB229 /* WebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD92C6FE84400FCB229 /* WebPresenter.swift */; };
 		E692DBE22C6FEAED00FCB229 /* StartScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBE12C6FEAED00FCB229 /* StartScreenPresenter.swift */; };
 		E692DBE42C6FEAFC00FCB229 /* StartScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBE32C6FEAFC00FCB229 /* StartScreenBuilder.swift */; };
-		E692DC4C2C72347200FCB229 /* SegmentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC4B2C72347200FCB229 /* SegmentedController.swift */; };
-		E692DC4E2C72348100FCB229 /* SegmnetedControlVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC4D2C72348100FCB229 /* SegmnetedControlVIew.swift */; };
+		E692DC4C2C72347200FCB229 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC4B2C72347200FCB229 /* SegmentedViewController.swift */; };
+		E692DC4E2C72348100FCB229 /* SegmnetedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC4D2C72348100FCB229 /* SegmnetedControl.swift */; };
 		E692DC502C7234D100FCB229 /* WebAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC4F2C7234D100FCB229 /* WebAuthModel.swift */; };
 		E692DC532C72355600FCB229 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E692DC522C72355600FCB229 /* KeychainAccess */; };
+		E692DC562C72396C00FCB229 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC552C72396C00FCB229 /* PhotoModel.swift */; };
+		E692DC582C72398B00FCB229 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC572C72398B00FCB229 /* PhotoService.swift */; };
+		E692DC5A2C72399E00FCB229 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC592C72399E00FCB229 /* APIErrors.swift */; };
+		E692DC5F2C72879A00FCB229 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E692DC5E2C72879A00FCB229 /* Kingfisher */; };
+		E692DC612C728BA800FCB229 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC602C728BA800FCB229 /* PhotoDetailViewController.swift */; };
+		E692DC672C72C19E00FCB229 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC662C72C19D00FCB229 /* PhotoCollectionViewCell.swift */; };
+		E692DC722C72E40E00FCB229 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC712C72E40E00FCB229 /* VideoModel.swift */; };
+		E692DC742C72E44700FCB229 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC732C72E44700FCB229 /* VideoService.swift */; };
+		E692DC762C72E47600FCB229 /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC752C72E47600FCB229 /* HTTPDataDownloader.swift */; };
+		E692DC7A2C738CF900FCB229 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC792C738CF900FCB229 /* VideoCollectionViewCell.swift */; };
+		E692DC7C2C738D3200FCB229 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DC7B2C738D3200FCB229 /* VideoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +55,19 @@
 		E692DBD92C6FE84400FCB229 /* WebPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPresenter.swift; sourceTree = "<group>"; };
 		E692DBE12C6FEAED00FCB229 /* StartScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenPresenter.swift; sourceTree = "<group>"; };
 		E692DBE32C6FEAFC00FCB229 /* StartScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenBuilder.swift; sourceTree = "<group>"; };
-		E692DC4B2C72347200FCB229 /* SegmentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedController.swift; sourceTree = "<group>"; };
-		E692DC4D2C72348100FCB229 /* SegmnetedControlVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmnetedControlVIew.swift; sourceTree = "<group>"; };
+		E692DC4B2C72347200FCB229 /* SegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		E692DC4D2C72348100FCB229 /* SegmnetedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmnetedControl.swift; sourceTree = "<group>"; };
 		E692DC4F2C7234D100FCB229 /* WebAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAuthModel.swift; sourceTree = "<group>"; };
+		E692DC552C72396C00FCB229 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		E692DC572C72398B00FCB229 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		E692DC592C72399E00FCB229 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
+		E692DC602C728BA800FCB229 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		E692DC662C72C19D00FCB229 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E692DC712C72E40E00FCB229 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		E692DC732C72E44700FCB229 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
+		E692DC752C72E47600FCB229 /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
+		E692DC792C738CF900FCB229 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E692DC7B2C738D3200FCB229 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E692DC5F2C72879A00FCB229 /* Kingfisher in Frameworks */,
 				E692DC532C72355600FCB229 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,13 +105,14 @@
 				04AD50002C6D7FBE002F909D /* App */,
 				E692DC032C701BD900FCB229 /* StartScreen */,
 				E692DBD42C6FC0DC00FCB229 /* WebOAuth */,
+				E692DC6A2C72C2B900FCB229 /* NetworkLayer */,
+				04AD50182C6EB25C002F909D /* Photos */,
+				04AD50032C6D7FD4002F909D /* Videos */,
+				E692DC4B2C72347200FCB229 /* SegmentedViewController.swift */,
+				E692DC4D2C72348100FCB229 /* SegmnetedControl.swift */,
 				04AD4FD52C6D05F5002F909D /* Assets.xcassets */,
 				04AD4FDA2C6D05F5002F909D /* Info.plist */,
 				04AD4FD72C6D05F5002F909D /* LaunchScreen.storyboard */,
-				04AD50182C6EB25C002F909D /* Photos */,
-				E692DC4B2C72347200FCB229 /* SegmentedController.swift */,
-				E692DC4D2C72348100FCB229 /* SegmnetedControlVIew.swift */,
-				04AD50032C6D7FD4002F909D /* Videos */,
 			);
 			path = VKMobileUp;
 			sourceTree = "<group>";
@@ -107,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				04AD500A2C6D828C002F909D /* VideoCollectionView.swift */,
+				E692DC792C738CF900FCB229 /* VideoCollectionViewCell.swift */,
+				E692DC7B2C738D3200FCB229 /* VideoDetailViewController.swift */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -115,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				04AD50142C6EB1FF002F909D /* PhotosCollectionView.swift */,
+				E692DC662C72C19D00FCB229 /* PhotoCollectionViewCell.swift */,
+				E692DC602C728BA800FCB229 /* PhotoDetailViewController.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -142,6 +169,35 @@
 			path = StartScreen;
 			sourceTree = "<group>";
 		};
+		E692DC6A2C72C2B900FCB229 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E692DC592C72399E00FCB229 /* APIErrors.swift */,
+				E692DC752C72E47600FCB229 /* HTTPDataDownloader.swift */,
+				E692DC782C72E49D00FCB229 /* Video */,
+				E692DC772C72E48E00FCB229 /* Photo */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		E692DC772C72E48E00FCB229 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				E692DC552C72396C00FCB229 /* PhotoModel.swift */,
+				E692DC572C72398B00FCB229 /* PhotoService.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		E692DC782C72E49D00FCB229 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				E692DC712C72E40E00FCB229 /* VideoModel.swift */,
+				E692DC732C72E44700FCB229 /* VideoService.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +216,7 @@
 			name = VKMobileUp;
 			packageProductDependencies = (
 				E692DC522C72355600FCB229 /* KeychainAccess */,
+				E692DC5E2C72879A00FCB229 /* Kingfisher */,
 			);
 			productName = VKMobileUp;
 			productReference = 04AD4FC92C6D05F2002F909D /* VKMobileUp.app */;
@@ -191,6 +248,7 @@
 			mainGroup = 04AD4FC02C6D05F2002F909D;
 			packageReferences = (
 				E692DC512C72355600FCB229 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				E692DC5D2C72879A00FCB229 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 04AD4FCA2C6D05F2002F909D /* Products */;
 			projectDirPath = "";
@@ -219,19 +277,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				04AD500F2C6D84DB002F909D /* StartScreenController.swift in Sources */,
+				E692DC672C72C19E00FCB229 /* PhotoCollectionViewCell.swift in Sources */,
 				E692DBDA2C6FE84400FCB229 /* WebPresenter.swift in Sources */,
 				E692DBD62C6FC0FC00FCB229 /* WebRouter.swift in Sources */,
 				E692DBD82C6FE82900FCB229 /* WebBuilder.swift in Sources */,
-				E692DC4E2C72348100FCB229 /* SegmnetedControlVIew.swift in Sources */,
+				E692DC4E2C72348100FCB229 /* SegmnetedControl.swift in Sources */,
 				E692DBD32C6FBA4300FCB229 /* StartScreenRouter.swift in Sources */,
+				E692DC562C72396C00FCB229 /* PhotoModel.swift in Sources */,
+				E692DC722C72E40E00FCB229 /* VideoModel.swift in Sources */,
 				04AD50072C6D81F4002F909D /* WebViewController.swift in Sources */,
 				04AD4FCD2C6D05F2002F909D /* AppDelegate.swift in Sources */,
 				04AD50152C6EB1FF002F909D /* PhotosCollectionView.swift in Sources */,
+				E692DC742C72E44700FCB229 /* VideoService.swift in Sources */,
+				E692DC762C72E47600FCB229 /* HTTPDataDownloader.swift in Sources */,
 				E692DC502C7234D100FCB229 /* WebAuthModel.swift in Sources */,
+				E692DC7C2C738D3200FCB229 /* VideoDetailViewController.swift in Sources */,
 				E692DBE22C6FEAED00FCB229 /* StartScreenPresenter.swift in Sources */,
 				04AD500B2C6D828C002F909D /* VideoCollectionView.swift in Sources */,
-				E692DC4C2C72347200FCB229 /* SegmentedController.swift in Sources */,
+				E692DC4C2C72347200FCB229 /* SegmentedViewController.swift in Sources */,
+				E692DC582C72398B00FCB229 /* PhotoService.swift in Sources */,
 				E692DBE42C6FEAFC00FCB229 /* StartScreenBuilder.swift in Sources */,
+				E692DC5A2C72399E00FCB229 /* APIErrors.swift in Sources */,
+				E692DC612C728BA800FCB229 /* PhotoDetailViewController.swift in Sources */,
+				E692DC7A2C738CF900FCB229 /* VideoCollectionViewCell.swift in Sources */,
 				04AD4FCF2C6D05F2002F909D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +451,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,7 +483,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,6 +533,14 @@
 				kind = branch;
 			};
 		};
+		E692DC5D2C72879A00FCB229 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -472,6 +548,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E692DC512C72355600FCB229 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		E692DC5E2C72879A00FCB229 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E692DC5D2C72879A00FCB229 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

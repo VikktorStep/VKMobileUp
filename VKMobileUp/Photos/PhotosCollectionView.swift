@@ -1,6 +1,10 @@
+
 import UIKit
+import Kingfisher
 
 class PhotoCollectionView: UICollectionView {
+
+    var photos: [Photo] = []
 
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -17,7 +21,16 @@ class PhotoCollectionView: UICollectionView {
     private func setupCollectionView() {
         backgroundColor = .white
         translatesAutoresizingMaskIntoConstraints = false
-        register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        delegate = self
     }
 }
 
+extension PhotoCollectionView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - 12) / 2
+        return CGSize(width: width, height: width)
+    }
+
+}

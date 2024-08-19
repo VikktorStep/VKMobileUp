@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            router = StartScreenRouter(navigationController: navigationController)
            
            let authModel = WebAuthModel()
-                      
+                                        
            if authModel.isTokenValid() {
                window?.rootViewController = router?.navigateToMainScreen()
            } else {

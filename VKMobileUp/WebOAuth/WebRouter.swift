@@ -8,6 +8,7 @@ protocol WebViewProtocol: AnyObject {
 protocol WebRouterProtocol {
     func open()
     func dismiss()
+    func start()
 }
 
 final class WebRouter: WebRouterProtocol {
@@ -24,7 +25,6 @@ final class WebRouter: WebRouterProtocol {
         viewController.modalPresentationStyle = .pageSheet
         navigationController?.present(viewController, animated: true, completion: nil)
     }
-
     
     func dismiss() {
         self.navigationController?.dismiss(animated: true, completion: { [weak self] in
@@ -33,7 +33,7 @@ final class WebRouter: WebRouterProtocol {
     }
     
     func open() {
-        let viewController = SegmentedController()
+        let viewController = SegmentedViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

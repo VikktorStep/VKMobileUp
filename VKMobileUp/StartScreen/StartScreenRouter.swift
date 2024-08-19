@@ -41,7 +41,7 @@ final class StartScreenRouter: StartScreenProtocol {
 
     func navigateToMainScreen() -> UINavigationController {
         print("Router: Navigating to main screen...")
-        let segmentedController = SegmentedController()
+        let segmentedController = SegmentedViewController()
         let navigationController = UINavigationController(rootViewController: segmentedController)
         self.navigationController = navigationController
         setRootViewController(navigationController)

@@ -23,6 +23,7 @@ final class WebPresenter {
             URLQueryItem(name: "client_id", value: "52149058"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "display", value: "mobile"),
+            URLQueryItem(name: "scope", value: "video"),
             URLQueryItem(name: "response_type", value: "token"),
         ]
         

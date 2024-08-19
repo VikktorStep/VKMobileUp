@@ -39,11 +39,9 @@ class PhotosService: PhotosServiceProtocol, HTTPDataDownloader {
         
         components.queryItems = [
             .init(name: "access_token", value: accessToken),
-            .init(name: "owner_id", value: "-128666765"),  // Проверенное значение owner_id
-            .init(name: "album_id", value: "266276915"),   // Проверенное значение album_id
-            .init(name: "v", value: "5.199"),  // Версия API
-            .init(name: "extended", value: "1"),  // Чтобы получить больше информации о фото
-            .init(name: "photo_sizes", value: "1")  // Чтобы получить все размеры фото
+            .init(name: "owner_id", value: "-128666765"),
+            .init(name: "album_id", value: "266276915"),
+            .init(name: "v", value: "5.199")
         ]
         
         return components.url?.absoluteString
