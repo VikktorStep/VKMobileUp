@@ -15,6 +15,7 @@
 		04AD500B2C6D828C002F909D /* VideoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD500A2C6D828C002F909D /* VideoCollectionView.swift */; };
 		04AD500F2C6D84DB002F909D /* StartScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD500E2C6D84DB002F909D /* StartScreenController.swift */; };
 		04AD50152C6EB1FF002F909D /* PhotosCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD50142C6EB1FF002F909D /* PhotosCollectionView.swift */; };
+		7715DD672CC5CC3E009D0FD3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7715DD662CC5CC3E009D0FD3 /* ChatViewController.swift */; };
 		E692DBD32C6FBA4300FCB229 /* StartScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD22C6FBA4300FCB229 /* StartScreenRouter.swift */; };
 		E692DBD62C6FC0FC00FCB229 /* WebRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD52C6FC0FC00FCB229 /* WebRouter.swift */; };
 		E692DBD82C6FE82900FCB229 /* WebBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E692DBD72C6FE82900FCB229 /* WebBuilder.swift */; };
@@ -51,6 +52,7 @@
 		04AD500A2C6D828C002F909D /* VideoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionView.swift; sourceTree = "<group>"; };
 		04AD500E2C6D84DB002F909D /* StartScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenController.swift; sourceTree = "<group>"; };
 		04AD50142C6EB1FF002F909D /* PhotosCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionView.swift; sourceTree = "<group>"; };
+		7715DD662CC5CC3E009D0FD3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E692DBD22C6FBA4300FCB229 /* StartScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenRouter.swift; sourceTree = "<group>"; };
 		E692DBD52C6FC0FC00FCB229 /* WebRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRouter.swift; sourceTree = "<group>"; };
 		E692DBD72C6FE82900FCB229 /* WebBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBuilder.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				04AD50032C6D7FD4002F909D /* Videos */,
 				E692DC6A2C72C2B900FCB229 /* NetworkLayer */,
 				E692DC4B2C72347200FCB229 /* SegmentedViewController.swift */,
+				7715DD662CC5CC3E009D0FD3 /* ChatViewController.swift */,
 				E692DC4D2C72348100FCB229 /* SegmnetedControl.swift */,
 				E692DC7D2C73ADB000FCB229 /* TextStrings.swift */,
 				E692DC7F2C73C0D500FCB229 /* Alert.swift */,
@@ -292,6 +295,7 @@
 				E692DC562C72396C00FCB229 /* PhotoModel.swift in Sources */,
 				E692DC722C72E40E00FCB229 /* VideoModel.swift in Sources */,
 				E692DC802C73C0D500FCB229 /* Alert.swift in Sources */,
+				7715DD672CC5CC3E009D0FD3 /* ChatViewController.swift in Sources */,
 				04AD50072C6D81F4002F909D /* WebViewController.swift in Sources */,
 				04AD4FCD2C6D05F2002F909D /* AppDelegate.swift in Sources */,
 				04AD50152C6EB1FF002F909D /* PhotosCollectionView.swift in Sources */,

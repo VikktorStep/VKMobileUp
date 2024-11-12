@@ -11,10 +11,18 @@ struct Videos: Decodable {
 struct Video: Decodable {
     let id: Int
     let title: String
-    let player: String 
+    let player: String
     let image: [VideoImage]
 }
 
 struct VideoImage: Decodable {
     let url: String
+}
+
+struct VideoVidF: Codable {
+    let ura: String
+}
+
+struct VideoStr2: Codable{
+    let tfh: String
 }
